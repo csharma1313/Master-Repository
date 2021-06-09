@@ -1,0 +1,21 @@
+x1<-c(-1,1,-1,1)
+x2<-c(-1,-1,1,1)
+y<- matrix(c(3,5,7,11), ncol = 1)
+dat<-data.frame(x1,x2,y)
+require(scatterplot3d)
+scatterplot3d(dat)
+s3d <- scatterplot3d(dat, pch =16 ,highlight.3d = TRUE , type = "h" , main = "3D scatterplot")
+plane1 <- lm(dat$y ~ dat$x1 + dat$x2)  
+s3d$plane3d(plane1)
+
+
+x1 <-  c(20,40,20,40 )
+x2 <- c(20,20,40,40)
+y <- c(3,5,7,11)
+Data1 <- data.frame(x1,x2,y)
+Data1
+require(scatterplot3d)
+scatterplot3d(Data1)
+s3d <- scatterplot3d(Data1, pch =16 ,highlight.3d = TRUE , type = "h" , main = "3D scatterplot")
+plane1 <- lm(Data1$y ~ Data1$x1 + Data1$x2) 
+s3d$plane3d(plane1)
